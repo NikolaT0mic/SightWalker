@@ -93,30 +93,21 @@ class _MapViewState extends State<MapView> {
     var next = widget.tourData[1];
     addMarker(LatLng(next["lat"], next["lng"]), next["name"], BitmapDescriptor.defaultMarker);
     await createPolylines(start["lat"], start["lng"], next["lat"], next["lng"], colorNr++);
-    print(start["name"]);
-    print(next["name"]);
     for (int i = 2; i < widget.tourData.length; i++) {
       var prev = next;
       next = widget.tourData[i];
       addMarker(LatLng(next["lat"], next["lng"]), next["name"], BitmapDescriptor.defaultMarker);
       await createPolylines(prev["lat"], prev["lng"], next["lat"], next["lng"], colorNr++);
-      print(prev["name"]);
-      print(next["name"]);
       if (i == widget.tourData.length - 1) {
         await createPolylines(next["lat"], next["lng"], start["lat"], start["lng"], colorNr++);
-        print(next["name"]);
-        print(start["name"]);
       }
     }
   }
 
   @override
   void initState() {
-    print("Route");
     for (var loc in widget.tourData) {
-      print(loc["name"]);
     }
-    print("end route");
     createLines();
     super.initState();
   }

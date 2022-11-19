@@ -3,7 +3,9 @@ import 'package:flutter/material.dart';
 import 'settings_page.dart';
 
 class RoutePage extends StatefulWidget {
-  const RoutePage({super.key});
+  const RoutePage({super.key, required this.tourData});
+
+  final List tourData;
 
   @override
   State<RoutePage> createState() => _RoutePageState();
@@ -45,7 +47,7 @@ class _RoutePageState extends State<RoutePage> {
               width: double.infinity,
               margin: const EdgeInsets.all(15.0),
               padding: const EdgeInsets.all(5.0),
-              child: const Text("TODO hier kommt die map hin"),
+              child: Text(widget.tourData[0]["name"]),
             ),
             ExpansionPanelList(
               expansionCallback: (int index, bool isExpanded) {
@@ -91,7 +93,7 @@ class _RoutePageState extends State<RoutePage> {
                           width: double.infinity,
                           decoration: const BoxDecoration(color: Colors.blueGrey),
                           child: const Text("Audio")
-                      )
+                      ),
                     ],
                   ),
                 ),

@@ -3,7 +3,11 @@ import 'package:flutter_google_places_hoc081098/flutter_google_places_hoc081098.
 import 'package:google_maps_webservice/places.dart';
 
 class SearchBarWidget extends StatefulWidget {
-  const SearchBarWidget({super.key});
+  const SearchBarWidget({super.key, required this.text, required this.setter, this.searchType = ""});
+
+  final String text;
+  final String searchType;
+  final Function setter;
 
   @override
   State<SearchBarWidget> createState() => _SearchBarState();
@@ -12,6 +16,7 @@ class SearchBarWidget extends StatefulWidget {
 class _SearchBarState extends State<SearchBarWidget> {
 
   String googleApikey = "AIzaSyDAkFS6Abq2m54nwZkUd9LEp3LRYMjU8I4";
+  /// TODO pass place to parent
   String location = "";
   String lat = "0";
   String lon = "0";
@@ -24,10 +29,11 @@ class _SearchBarState extends State<SearchBarWidget> {
         // show input autocomplete with selected mode
         // then get the Prediction selected
         Prediction? p = await PlacesAutocomplete.show(
+          types: [widget.searchType],
             context: context, apiKey: googleApikey);
         displayPrediction(p);
       },
-      child: Text(location == "" ? "Search Place" : location),
+      child: Text(location == "" ? widget.text : location),
     );
   }
 
@@ -39,11 +45,9 @@ class _SearchBarState extends State<SearchBarWidget> {
       double? lat = detail.result.geometry?.location.lat;
       double? lng = detail.result.geometry?.location.lng;
 
-      print(lat);
-      print(lng);
-
       setState(() {
         location = p.description!;
+        widget.setter({"description": p.description, "lng": lng, "lat": lat});
       });
     }
   }

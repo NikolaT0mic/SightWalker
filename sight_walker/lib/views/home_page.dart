@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:sight_walker/views/settings_page.dart';
+import '../widgets/map.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key, required this.title});
@@ -59,6 +60,7 @@ class _HomePageState extends State<HomePage> {
             '$_counter',
             style: Theme.of(context).textTheme.headline4,
           ),
+          MapView(),
         ],
       ),
       floatingActionButton: FloatingActionButton(

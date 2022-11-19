@@ -6,13 +6,17 @@ import 'package:google_maps_flutter/google_maps_flutter.dart';
 const API_KEY = "AIzaSyDAkFS6Abq2m54nwZkUd9LEp3LRYMjU8I4";
 
 class MapView extends StatefulWidget {
+  const MapView({super.key, required this.tourData});
+
+  final List tourData;
+
   @override
   _MapViewState createState() => _MapViewState();
 }
 
 class _MapViewState extends State<MapView> {
-  // Initial location of the Map view (München)
-  static const CameraPosition _initialLocation = CameraPosition(target: LatLng(48.137154, 11.576124), zoom:13);
+  // Initial location of the Map view
+  static CameraPosition _initialLocation = CameraPosition(target: LatLng(48.137154, 11.576124), zoom:13);
   // For controlling the view of the Map
   late GoogleMapController mapController;
   // Object for PolylinePoints
@@ -36,7 +40,8 @@ class _MapViewState extends State<MapView> {
       double startLatitude,
       double startLongitude,
       double destLatitude,
-      double destLongitude
+      double destLongitude,
+      int colorNr,
       ) async {
       // Initializing PolylinePoints
       polylinePoints = PolylinePoints();
@@ -56,17 +61,19 @@ class _MapViewState extends State<MapView> {
       }
       // Defining an ID
       PolylineId id = PolylineId('poly');
+
       // Initializing Polyline
       Polyline polyline = Polyline(
         polylineId: id,
         color: Colors.red,
         points: polylineCoordinates,
-        width: 5,
+        width: 3,
       );
       // Adding the polyline to the map
       //polylines[id] = polyline;
       polys.add(polyline);
       setState(() {});
+      return;
     }
 
   @override
@@ -75,13 +82,42 @@ class _MapViewState extends State<MapView> {
     super.dispose();
   }
 
+  void createLines() async {
+    int colorNr = 0;
+    var start = widget.tourData[0];
+    _initialLocation =  CameraPosition(target: LatLng(start["lat"], start["lng"]), zoom:13);
+    addMarker(LatLng(start["lat"], start["lng"]), start["name"], BitmapDescriptor.defaultMarkerWithHue(90));
+    if (widget.tourData.length == 1) {
+      return;
+    }
+    var next = widget.tourData[1];
+    addMarker(LatLng(next["lat"], next["lng"]), next["name"], BitmapDescriptor.defaultMarker);
+    await createPolylines(start["lat"], start["lng"], next["lat"], next["lng"], colorNr++);
+    print(start["name"]);
+    print(next["name"]);
+    for (int i = 2; i < widget.tourData.length; i++) {
+      var prev = next;
+      next = widget.tourData[i];
+      addMarker(LatLng(next["lat"], next["lng"]), next["name"], BitmapDescriptor.defaultMarker);
+      await createPolylines(prev["lat"], prev["lng"], next["lat"], next["lng"], colorNr++);
+      print(prev["name"]);
+      print(next["name"]);
+      if (i == widget.tourData.length - 1) {
+        await createPolylines(next["lat"], next["lng"], start["lat"], start["lng"], colorNr++);
+        print(next["name"]);
+        print(start["name"]);
+      }
+    }
+  }
+
   @override
   void initState() {
-    addMarker(LatLng(48.1527, 11.5919), "origin", BitmapDescriptor.defaultMarkerWithHue(90));
-    addMarker(LatLng(48.1357, 11.5718), "wp", BitmapDescriptor.defaultMarker);
-    addMarker(LatLng(48.1299, 11.5835), "end", BitmapDescriptor.defaultMarker);
-    createPolylines(48.1527, 11.5919, 48.1357, 11.5718);
-    createPolylines(48.1357, 11.5718, 48.1299, 11.5835);
+    print("Route");
+    for (var loc in widget.tourData) {
+      print(loc["name"]);
+    }
+    print("end route");
+    createLines();
     super.initState();
   }
 

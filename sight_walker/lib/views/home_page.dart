@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:sight_walker/views/settings_page.dart';
+
+import '/views/route_page.dart';
+import '/views/settings_page.dart';
+import '/widgets/search_bar.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key, required this.title});
@@ -11,13 +14,6 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-  int _counter = 0;
-
-  void _incrementCounter() {
-    setState(() {
-      _counter++;
-    });
-  }
 
   @override
   Widget build(BuildContext context) {
@@ -33,36 +29,36 @@ class _HomePageState extends State<HomePage> {
                   ),
                 );
               },
-              icon: Icon(Icons.settings)
+              icon: const Icon(Icons.settings)
           )
         ],
       ),
-      body: Column(
-        mainAxisAlignment: MainAxisAlignment.start,
-        children: <Widget>[
-          Container(
-            decoration: BoxDecoration(
-              border: Border.all(color: Colors.amber),
-              borderRadius: BorderRadius.circular(10.0),
+      body: SingleChildScrollView(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.start,
+          children: <Widget>[
+            Container(
+              margin: const EdgeInsets.only(top: 20),
+              padding: const EdgeInsets.only(left: 10.0, right: 10.0, top: 3, bottom: 3),
+              decoration: BoxDecoration(
+                border: Border.all(color: Colors.amber),
+                borderRadius: BorderRadius.circular(10.0),
+              ),
+              width: double.infinity,
+              height: 40,
+              child: const SearchBarWidget()
             ),
-            alignment: Alignment.centerLeft,
-            height: 40,
-            width: double.infinity,
-            margin: const EdgeInsets.all(15.0),
-            padding: const EdgeInsets.all(5.0),
-            child: const Text("Search"),
-          ),
-          const Text(
-            'You have pushed the button this many times:',
-          ),
-          Text(
-            '$_counter',
-            style: Theme.of(context).textTheme.headline4,
-          ),
-        ],
+          ],
+        ),
       ),
       floatingActionButton: FloatingActionButton(
-        onPressed: _incrementCounter,
+        onPressed: () {
+          Navigator.of(context).push(
+            MaterialPageRoute(
+              builder: (context) => const RoutePage(),
+            ),
+          );
+        },
         tooltip: 'Increment',
         child: const Icon(Icons.add),
       ),

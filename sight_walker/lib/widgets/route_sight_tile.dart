@@ -9,13 +9,43 @@ String truncateOrPadString(String inputString) {
   return "${inputString.substring(0, 27)}...";
 }
 
+Future<void> _showMyDialog(context, badge) async {
+  return showDialog<void>(
+    context: context,
+    barrierDismissible: false, // user must tap button!
+    builder: (BuildContext context) {
+      return AlertDialog(
+        title: Center(child: Text(badge["title"])),
+        content: SingleChildScrollView(
+          child: ListBody(
+            children: <Widget>[
+              Image.network(badge["img"]),
+              Center(child: Text(badge["description"])),
+            ],
+          ),
+        ),
+        actions: <Widget>[
+          Center(
+            child: TextButton(
+              child: const Text('Close'),
+              onPressed: () {
+                Navigator.of(context).pop();
+              },
+            ),
+          ),
+        ],
+      );
+    },
+  );
+}
+
 IgnorePointer routeTile(Map sightInfo, {bool expandable = true}) {
   String sightName = sightInfo["name"];
   String picUrl = sightInfo["picture_url"];
   int chillTime = sightInfo["estimated_time"];
   String desc = sightInfo["description"];
   Map badge = sightInfo["badge"];
-  var visited = sightInfo["visited"];
+  final ValueNotifier<MaterialStatePropertyAll<Color>> color = ValueNotifier<MaterialStatePropertyAll<Color>>(MaterialStatePropertyAll(Colors.blue));
 
   String timeString = toTimeString(chillTime);
 
@@ -72,12 +102,21 @@ IgnorePointer routeTile(Map sightInfo, {bool expandable = true}) {
         Row(children: [
           const Text("Visited: "),
           const SizedBox(width: 20,),
-          // Checkbox(
-          //   value: visited,
-          //   onChanged: (bool value) {
-          //     sightInfo["visited"] = value;
-          //   },
-          // ),
+          ValueListenableBuilder<MaterialStatePropertyAll<Color>>(
+            builder: (BuildContext context, MaterialStatePropertyAll<Color> value, Widget? child) {
+              // This builder will only get called when the _counter
+              // is updated.
+              return ElevatedButton(onPressed: () {
+                color.value = MaterialStatePropertyAll(Colors.green);
+                if(badge.isNotEmpty) {
+                  _showMyDialog(context, badge);
+                }
+              }, style: ButtonStyle(
+                backgroundColor: color.value,
+              ) ,child: Text("Visited"));
+            },
+            valueListenable: color,
+          )
         ]),
       ],
     ),

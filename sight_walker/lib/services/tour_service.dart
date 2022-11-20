@@ -3,7 +3,7 @@ import 'dart:convert';
 
 class TourService{
 
-  Future<List> requestTour(var city, var start) async {
+  Future<List> requestTour(var city, var start, int duration) async {
     var url = "https://2cc7-2a09-80c0-192-0-d3a8-8f12-9ddf-3f34.eu.ngrok.io/tour";
     var headers = {
       'Content-Type': 'application/json',
@@ -21,7 +21,7 @@ class TourService{
         "museum",
         "park"
       ],
-      "max_time": 180,
+      "max_time": duration,
       "language": "en"
     });
     request.headers.addAll(headers);

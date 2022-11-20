@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 
 import '../services/tour_service.dart';
 import '/views/route_page.dart';
@@ -25,6 +26,7 @@ class _HomePageState extends State<HomePage> {
   var start = {};
   
   List tourData = [];
+  final TextEditingController durationEditingController = TextEditingController(text: "60");
   
   void setStart(var _start) {
     setState(() {
@@ -40,7 +42,7 @@ class _HomePageState extends State<HomePage> {
 
   Future<void> fetchData() async {
     TourService t = TourService();
-    var temp = await t.requestTour(city, start);
+    var temp = await t.requestTour(city, start, int.parse(durationEditingController.text));
     //print("Test tour desc ausgabe: ${temp[0]["name"]}");
     setState(() {
       tourData = temp;
@@ -96,6 +98,21 @@ class _HomePageState extends State<HomePage> {
                 child: SearchBarWidget(text: "Search Location", setter: setStart)
             ),
             const SizedBox(height: 30,),
+            Padding(
+              padding: const EdgeInsets.only(left: 40.0, right: 40.0, top: 20.0),
+              child: TextFormField(
+                controller: durationEditingController,
+                initialValue: null,
+                onChanged: (val) {
+                  print(val);
+                },
+                keyboardType: TextInputType.number,
+                decoration: InputDecoration(
+                  label: Text("Input your maximum duration in minutes"),
+                ),
+              ),
+            ),
+            const SizedBox(height: 20,),
             ElevatedButton(
                 onPressed: () async {
                   bool error = false;

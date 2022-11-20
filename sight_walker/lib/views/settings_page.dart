@@ -46,7 +46,7 @@ class _PreferenceListState extends State<PreferenceList> {
   void loadPreferences() async{
     SharedPreferences prefs = await SharedPreferences.getInstance();
     setState(() {
-      items = prefs.getStringList(preferenceList) ?? ['Amusement Park', 'Art Gallery', 'Church', 'Museum', 'Park', 'Zoo'];
+      items = prefs.getStringList(preferenceList) ?? ['Amusement Park', 'Art Gallery', 'Church', 'Museum', 'Park', 'Zoo', 'University'];
     });
   }
 

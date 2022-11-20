@@ -1,0 +1,354 @@
+[
+    {
+        "name": "Marienplatz",
+        "lat": 48.1373932,
+        "lng": 11.5754485,
+        "description": "City-center square & transport hub with towering St. Peter's church, 2 town halls & a toy museum.",
+        "website": "https://www.muenchen.de/sehenswuerdigkeiten/orte/120347.html",
+        "rating": 4.7,
+        "ratings": 93996,
+        "types": [
+            "tourist_attraction",
+            "point_of_interest",
+            "establishment"
+        ],
+        "score": 100.0,
+        "estimated_time": 15,
+        "picture_url": "https://lh3.googleusercontent.com/places/AM5lPC_kHgSPYOw_hKsRL_ximy4VkkS0FozxvbQ905TDL3z4TRa7RCZ-ceVLqTviAStHIGiXYJwMIgpJym3_gbAukCdkVTJ7CSvNlYc=s1600-w500-h500"
+    },
+    {
+        "name": "Olympiapark M\u00fcnchen",
+        "lat": 48.17546460000001,
+        "lng": 11.551797,
+        "description": "Huge Olympic park complex with a stadium, guided tours, sea life center, rock museum & concerts.",
+        "website": "https://www.olympiapark.de/",
+        "rating": 4.6,
+        "ratings": 55927,
+        "types": [
+            "park",
+            "tourist_attraction",
+            "point_of_interest",
+            "establishment"
+        ],
+        "score": 58.207429241730644,
+        "estimated_time": 60,
+        "picture_url": "https://lh3.googleusercontent.com/places/AM5lPC9JC2TosIVbwpCgs7YgLVxmj5V-Ypm1mcXUjzcRz8dsv-mYTZl_LCVuQZm9YdzAZPP6A-kCsHb1xxTxyYJh0wFuyclGCWbGgMo=s1600-w500-h500"
+    },
+    {
+        "name": "English Garden",
+        "lat": 48.16423229999999,
+        "lng": 11.6055522,
+        "description": "Expansive, 18th-century, urban park with 78km of cycling/jogging trails & a lakeside beer garden.",
+        "website": "https://www.muenchen.de/sehenswuerdigkeiten/orte/120242.html",
+        "rating": 4.7,
+        "ratings": 54345,
+        "types": [
+            "park",
+            "tourist_attraction",
+            "point_of_interest",
+            "establishment"
+        ],
+        "score": 57.79006298205667,
+        "estimated_time": 60,
+        "picture_url": "https://lh3.googleusercontent.com/places/AM5lPC-vCr37qhuol8t6Wti18Gs7vmOIUJIlLGM2viQ_DmWaS1FaFyik5fraZy1v0wOP1UcwtP_B3i03oi0pECa5WSOQgH_vYCKfiSs=s1600-w500-h500"
+    },
+    {
+        "name": "Victuals Market",
+        "lat": 48.1351143,
+        "lng": 11.5762549,
+        "description": "Sprawling 200-year-old market with over 100 stalls selling goods from fruit to meat & flowers.",
+        "website": "https://www.muenchen.de/rathaus/Stadtverwaltung/Kommunalreferat/markthallen/viktualienmarkt.html",
+        "rating": 4.6,
+        "ratings": 53249,
+        "types": [
+            "tourist_attraction",
+            "point_of_interest",
+            "establishment"
+        ],
+        "score": 55.417256408566395,
+        "estimated_time": 15,
+        "picture_url": "https://lh3.googleusercontent.com/places/AM5lPC_DQrWpT8ODmLBbHZRJXMjAs7LJF7kphi1KS2llEE7Wh4M_2HExnBbMn80pHghKPRDuK5rP_CDKqF0z9gz1QGRxo6vmG0QLeH8=s1600-w500-h500"
+    },
+    {
+        "name": "Nymphenburg Palace",
+        "lat": 48.1582675,
+        "lng": 11.5033143,
+        "description": "A 200-hectare palace estate with a rococo interiors, coach display & symmetrical baroque gardens.",
+        "website": "https://www.schloss-nymphenburg.de/",
+        "rating": 4.6,
+        "ratings": 25392,
+        "types": [
+            "tourist_attraction",
+            "museum",
+            "point_of_interest",
+            "establishment"
+        ],
+        "score": 26.39341600025549,
+        "estimated_time": 90,
+        "picture_url": "https://lh3.googleusercontent.com/places/AM5lPC_itkyaKhiFaCvrJ9U0rzCkR6915OxJshyZiUYlFCn7rBWiRJqkqcwAPoa-xwmL0zUgPu2jCh1pUVUnEnXy3V4RkA3CISmyxR4=s1600-w500-h500"
+    },
+    {
+        "name": "Schlosspark Nymphenburg",
+        "lat": 48.15557769999999,
+        "lng": 11.4935711,
+        "description": "Classical English-style palace park with neat flowerbeds, ornamental pool & secluded wooded area.",
+        "website": "http://www.schloss-nymphenburg.de/",
+        "rating": 4.7,
+        "ratings": 18644,
+        "types": [
+            "park",
+            "tourist_attraction",
+            "point_of_interest",
+            "establishment"
+        ],
+        "score": 19.785045164660016,
+        "estimated_time": 60,
+        "picture_url": "https://lh3.googleusercontent.com/places/AM5lPC-hAxRM4Yar58lHtkJXcUd4CRd07FeRqVS7-7ULbeXuLwjvs_BO6UbVKNgeKDzbkhjlcpVjTJdTFruGTLmxSrizxBWJo_gG1Kw=s1600-w500-h500"
+    },
+    {
+        "name": "Karlsplatz",
+        "lat": 48.1391929,
+        "lng": 11.5662006,
+        "description": "Bustling square featuring historical buildings, a fountain & an underground shopping arcade.",
+        "website": "https://www.muenchen.de/sehenswuerdigkeiten/orte/120328.html",
+        "rating": 4.5,
+        "ratings": 16891,
+        "types": [
+            "tourist_attraction",
+            "point_of_interest",
+            "establishment"
+        ],
+        "score": 17.153760067514266,
+        "estimated_time": 15,
+        "picture_url": "https://lh3.googleusercontent.com/places/AM5lPC9ZHHuy_r2CUlgviKXWAYMaBHQbP5oS8Cb8hATiPXciEwKA_ZtvI3UJMfXjpeFVW7j5IWVodJuGwDN6PzGkydch-R06ewE7ims=s1600-w500-h500"
+    },
+    {
+        "name": "Odeonsplatz",
+        "lat": 48.14215100000001,
+        "lng": 11.5775227,
+        "description": "Large early 19th-century square lined by ornate buildings, some of them with a Roman influence.",
+        "website": "https://www.muenchen.de/sehenswuerdigkeiten/orte/120341.html",
+        "rating": 4.6,
+        "ratings": 14683,
+        "types": [
+            "tourist_attraction",
+            "point_of_interest",
+            "establishment"
+        ],
+        "score": 15.235850327979165,
+        "estimated_time": 15,
+        "picture_url": "https://lh3.googleusercontent.com/places/AM5lPC_am2wL4xE6_nqL5VtVj_CoGObaSHHQMr-QRr5NEEeyPo7ruNelXx8PLq9Mpo3dswyB-gLanzDjNUz9V5T0aQbyhx1MCiRkDF8=s1600-w500-h500"
+    },
+    {
+        "name": "Olympiaturm",
+        "lat": 48.1744897,
+        "lng": 11.5537665,
+        "description": "Originally built for the 1972 Olympics, this park is now a hub for entertainment & sporting events.",
+        "website": "https://www.olympiapark.de/de/touren-und-sightseeing/sightseeing/olympiaturm/",
+        "rating": 4.7,
+        "ratings": 7901,
+        "types": [
+            "tourist_attraction",
+            "point_of_interest",
+            "establishment"
+        ],
+        "score": 8.348729475679532,
+        "estimated_time": 15,
+        "picture_url": "https://lh3.googleusercontent.com/places/AM5lPC8480oQAmtw7NCcX47lmS_xq9eobrQj6JhOyNVfogaC1hl1HUuEQbKJj9aIKTwJZfu_hsgEbXZASLHm83PnORxg7R4BBcKxl60=s1600-w500-h500"
+    },
+    {
+        "name": "Hofgarten",
+        "lat": 48.1427778,
+        "lng": 11.58,
+        "description": "City park with formal lawns & flower beds, court gardens of the Royal residence in the 17th century.",
+        "website": "http://www.muenchen.de/sehenswuerdigkeiten/orte/120231.html",
+        "rating": 4.7,
+        "ratings": 7747,
+        "types": [
+            "park",
+            "tourist_attraction",
+            "point_of_interest",
+            "establishment"
+        ],
+        "score": 8.184790853683534,
+        "estimated_time": 60,
+        "picture_url": "https://lh3.googleusercontent.com/places/AM5lPC9WCRlHTYjbSo2coq0dDZmjbaeIT8o5_tFPgTWgDfXBSqvtYYCQw0lNBT7veo9q_X_rJH3tP-99fCZtlkh45CrjfNIWKhr4h6s=s1600-w500-h500"
+    },
+    {
+        "name": "K\u00f6nigsplatz",
+        "lat": 48.1456698,
+        "lng": 11.5653126,
+        "description": "Landmark square known for its monumental, neo-classical buildings, including an antiquity museum.",
+        "website": "http://www.muenchen.de/sehenswuerdigkeiten/orte/130668.html",
+        "rating": 4.6,
+        "ratings": 7307,
+        "types": [
+            "tourist_attraction",
+            "point_of_interest",
+            "establishment"
+        ],
+        "score": 7.550893338651485,
+        "estimated_time": 15,
+        "picture_url": "https://lh3.googleusercontent.com/places/AM5lPC-RG5aJP0TsAYbSmU5IL4ve2NoFYzOgJ2r5-FZpIkRqoCi_0Xdsy-Ak5M5NG4J4OPIqBZ-4hkMY_yZCJaOESP8s1jU--PpJa9k=s1600-w500-h500"
+    },
+    {
+        "name": "Isar Gate",
+        "lat": 48.1350898,
+        "lng": 11.5818195,
+        "description": "Medieval city gate rebuilt in 1833 featuring a fresco & a museum on comedian & actor Karl Valentin.",
+        "website": "http://www.muenchen.de/sehenswuerdigkeiten/orte/120456.html",
+        "rating": 4.4,
+        "ratings": 7543,
+        "types": [
+            "tourist_attraction",
+            "point_of_interest",
+            "establishment"
+        ],
+        "score": 7.455085053069411,
+        "estimated_time": 15,
+        "picture_url": "https://lh3.googleusercontent.com/places/AM5lPC-uUQ8k7Ga43hhMonE727Qri7TrOgI_yvhTmK3yS_zUl_zIx6gEY4h5b7idjVpstP1jbeKrVi8ERkS5B2tC1bFW99DsEJXQM6Q=s1600-w500-h500"
+    },
+    {
+        "name": "Schleissheim palace complex",
+        "lat": 48.2477573,
+        "lng": 11.5684144,
+        "description": "Exhibitions of religious folk art plus Prussian arts & culture in a rebuilt 17th-century palace.",
+        "website": "http://www.schloesser-schleissheim.de/deutsch/schleissheim/index.htm",
+        "rating": 4.7,
+        "ratings": 3676,
+        "types": [
+            "park",
+            "tourist_attraction",
+            "point_of_interest",
+            "establishment"
+        ],
+        "score": 3.8510627358542915,
+        "estimated_time": 60,
+        "picture_url": "https://lh3.googleusercontent.com/places/AM5lPC-v9bnA--Lz0123yqysXFDtzqjmCWECoObwNNOtf4_FWZNBaUJuF870JwY8M0otVvEvcbYGJxpqUhdou6l5JYvki86cgWJye3o=s1600-w500-h500"
+    },
+    {
+        "name": "Luitpold Park",
+        "lat": 48.171114,
+        "lng": 11.5699668,
+        "description": "33-hectare public park around a scenic hill made from WWII rubble with a hedge maze & restaurant.",
+        "website": "http://www.muenchen.de/sehenswuerdigkeiten/orte/120254.html",
+        "rating": 4.6,
+        "ratings": 3252,
+        "types": [
+            "park",
+            "tourist_attraction",
+            "point_of_interest",
+            "establishment"
+        ],
+        "score": 3.3260423907496754,
+        "estimated_time": 60,
+        "picture_url": "https://lh3.googleusercontent.com/places/AM5lPC-QUsTawN4z-0W7teU4kObXo6hIC1dlnk5eFJxqmpcl8dOcYTEIz-YXrvQBEw42rQkIqkFD22H3NfAHyGneJ-pPSJen4-x4ov8=s1600-w500-h500"
+    },
+    {
+        "name": "Old Town Hall, Munich",
+        "lat": 48.1366516,
+        "lng": 11.5768685,
+        "description": "Town hall dating back to the 14th century with gothic facelifts after lightning damage & bombing.",
+        "website": "http://www.spielzeugmuseummuenchen.de/",
+        "rating": 4.4,
+        "ratings": 1117,
+        "types": [
+            "museum",
+            "tourist_attraction",
+            "point_of_interest",
+            "establishment"
+        ],
+        "score": 1.0510146278640844,
+        "estimated_time": 90,
+        "picture_url": "https://lh3.googleusercontent.com/places/AM5lPC_BgeBsl7HAAfj6_CXYl7KKS_5BLo8xy01zB4-Pa6508HdcHOei4JIH33lqFxU2IpoSMTL2AF6QdyNiE6Gpez72q0igQzFrwfM=s1600-w500-h500"
+    },
+    {
+        "name": "Fish's Fountain",
+        "lat": 48.1372429,
+        "lng": 11.5761777,
+        "description": "Fish Fountain, a city landmark with a history dating to the Middle Ages, is a popular photo op.",
+        "website": "http://marienplatz.de/sehenswuerdigkeiten/fischbrunnen",
+        "rating": 4.6,
+        "ratings": 900,
+        "types": [
+            "tourist_attraction",
+            "park",
+            "point_of_interest",
+            "establishment"
+        ],
+        "score": 0.8755246522872699,
+        "estimated_time": 60,
+        "picture_url": "https://lh3.googleusercontent.com/places/AM5lPC-Y-eDJMQy7wYlO1em_2qPFkMNK2QyqkFUorgnnLSfmYbBNs4XjCZ2O-YAYyegZPAEhumH16ce45JXR_9RxrzYmtDg2tThaw4U=s1600-w500-h500"
+    },
+    {
+        "name": "Glyptothek",
+        "lat": 48.1463432,
+        "lng": 11.5657031,
+        "description": "King Ludwig I's huge collection of classical sculpture housed in a grand 19th-century building.",
+        "website": "http://www.antike-am-koenigsplatz.mwn.de/de/glyptothek-muenchen.html",
+        "rating": 4.6,
+        "ratings": 844,
+        "types": [
+            "tourist_attraction",
+            "museum",
+            "point_of_interest",
+            "establishment"
+        ],
+        "score": 0.8171789918476887,
+        "estimated_time": 90,
+        "picture_url": "https://lh3.googleusercontent.com/places/AM5lPC97Qp2aGcUgDZAt6fOA7-5xtblELB73lpXusuRThGBdxrBsR5Qqtvh4rmJK8NIXURDUL5Q3o-evsUuALp1DaCK38FTYNPRWSD4=s1600-w500-h500"
+    },
+    {
+        "name": "Wittelsbach Fountain",
+        "lat": 48.1413685,
+        "lng": 11.5693274,
+        "description": "Spectacular fountain built in the late 1800s, featuring 2 stately statues & illuminated waters.",
+        "website": "https://www.muenchen.de/sehenswuerdigkeiten/bildergalerien/brunnen-innenstadt.html",
+        "rating": 4.6,
+        "ratings": 499,
+        "types": [
+            "tourist_attraction",
+            "park",
+            "point_of_interest",
+            "establishment"
+        ],
+        "score": 0.4577280480681266,
+        "estimated_time": 60,
+        "picture_url": "https://lh3.googleusercontent.com/places/AM5lPC8ZTWmTq8DXs4UJc_rjMUuwlMvn_xLkzJq14RlUMyf667Zb905Rh571i93seaxEfZYZDmhANKX0dBUy6xMxJZJ-SNH-IMbE4AU=s1600-w500-h500"
+    },
+    {
+        "name": "Stauwehr Oberf\u00f6hring",
+        "lat": 48.1684409,
+        "lng": 11.6168321,
+        "description": null,
+        "website": null,
+        "rating": 4.5,
+        "ratings": 300,
+        "types": [
+            "tourist_attraction",
+            "point_of_interest",
+            "establishment"
+        ],
+        "score": 0.2435976622778318,
+        "estimated_time": 15,
+        "picture_url": "https://lh3.googleusercontent.com/places/AM5lPC8QUyGdl0ANxhNl3JwthxPSRwoX3P1h6YdFAHpe4C6vqgaQzX7ieccc1KuN3PtoZiHR-atL8zN4BuWjfOr9mRy1bn7W4xJVm8s=s1600-w500-h500"
+    },
+    {
+        "name": "Walk of Fame Olympic Park",
+        "lat": 48.1738972,
+        "lng": 11.5544805,
+        "description": null,
+        "website": "https://www.olympiapark.de/de/der-olympiapark/aussengelaende/munich-olympic-walk-of-stars/",
+        "rating": 4.5,
+        "ratings": 61,
+        "types": [
+            "tourist_attraction",
+            "park",
+            "point_of_interest",
+            "establishment"
+        ],
+        "score": 0.0,
+        "estimated_time": 60,
+        "picture_url": "https://lh3.googleusercontent.com/places/AM5lPC-TjjJ5MZsGlvM5wanpHkMatU3p_GLOBLsS0bhzYlO8l5cJuRr4Xj5InM_LJexJ-AB0ucAz2jjBrT8Fgjay2XKSwhMxhjGGrRQ=s1600-w500-h310"
+    }
+]

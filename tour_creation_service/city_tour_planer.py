@@ -8,7 +8,7 @@ import googlemaps
 import networkx as nx
 from dacite import from_dict
 from googleplaces import GooglePlaces
-from networkx.algorithms.approximation import traveling_salesman_problem, greedy_tsp
+from networkx.algorithms.approximation import traveling_salesman_problem, greedy_tsp, asadpour_atsp, christofides
 
 from preferences import SightType, Minutes, get_time
 from utils import powerset
@@ -32,14 +32,16 @@ class Place:
     score: float = 0.0
     estimated_time: Minutes = 0
     picture_url: str = ""
+    badge: dict = dataclasses.field(default_factory=lambda: {})
+    visited: bool = False
 
     def __hash__(self):
-        return hash(self.name)
+        return hash(self.lat + self.lng)
 
     def __eq__(self, other):
         if other is None:
             return False
-        return self.name == other.name
+        return self.lat == other.lat and self.lng == other.lng
 
     @classmethod
     def from_place(cls, place):
@@ -160,19 +162,17 @@ def get_best_round_trip(sights_graph: nx.Graph, start: Sight, max_time: Minutes)
     https://en.wikipedia.org/wiki/Traveling_purchaser_problem
     Purchase: Pay with time, get utility (score)
     """
-    best_route: list[Sight] = [start]
-    possible_sight_combinations = list(powerset(sights_graph.nodes))
-    for sight_combination in possible_sight_combinations:
-        if start not in sight_combination or len(sight_combination) <= 2:
-            # can not be a valid solution
-            continue
+    possible_sight_combinations = [sights for sights in powerset(sights_graph.nodes) if
+                                   sum([sight.estimated_time for sight in sights]) <= (max_time - 5 * len(sights))
+                                   and start in sights and len(sights) >= 2]
+    # sort by utility, max utility first
+    possible_sight_combinations.sort(key=lambda route: sum([sight.score for sight in set(route)]), reverse=True)
 
-        if sum([sight.estimated_time for sight in sight_combination]) >= max_time:
-            # can not be a valid solution
-            continue
+    route = [start]
+    for sight_combination in possible_sight_combinations:
+        sight_combination = set(sight_combination)
 
         # now we have a TSP problem
-        sight_combination = list(sight_combination)
         route = traveling_salesman_problem(sights_graph,
                                            weight='weight',
                                            nodes=sight_combination,
@@ -181,24 +181,20 @@ def get_best_round_trip(sights_graph: nx.Graph, start: Sight, max_time: Minutes)
 
         total_time = get_time_for_route(route)
 
-        # print("Route: ", [sight.name for sight in route], total_time, total_time > max_time)
-
         if total_time > max_time:
             continue
 
-        utility = sum([sight.score for sight in set(route)])
-        best_utility = sum([sight.score for sight in set(best_route)])
-        if utility > best_utility:
-            best_route = route
+        # move start to beginning and remove last element => best_route = [start, ..., last stop before start]
+        route = route[:-1]
+        print("Best: ", route)
+        route = rotate_til(route, start)
+        return route
 
-    # move start to beginning and remove last element => best_route = [start, ..., last stop before start]
-    best_route = best_route[:-1]
-    best_route = rotate_til(best_route, start)
-    return best_route
+    return route
 
 
 def rotate_til(l: list[any], item: any) -> list[any]:
-    if l[0] is item or item not in l:
+    if l[0] == item or item not in l:
         return l
     r = l.pop()
     l.insert(0, r)
@@ -226,7 +222,7 @@ def save_sights(city: Location, sights: list[Sight], language):
 def load_sights(city: Location, language="en"):
     path = f"sight_data/{city.name.lower()}_sights_{language}.json"
     if not os.path.exists(path):
-        print("loading sights")
+        print(f"loading sights:", f"{city.name.lower()}_sights_{language}.json")
         sights = load_sights_rec(location=city, language=language)
         save_sights(city, sights, language)
         return sights

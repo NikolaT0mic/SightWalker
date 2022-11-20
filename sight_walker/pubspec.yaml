@@ -49,7 +49,6 @@ flutter:
   uses-material-design: true
   assets:
     - assets/audio/isartor_tts.mp3
-    - resources/
 
   # To add assets to your application, add an assets section, like this:
   # assets:

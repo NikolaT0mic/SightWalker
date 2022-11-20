@@ -98,6 +98,7 @@ class _HomePageState extends State<HomePage> {
             const SizedBox(height: 30,),
             ElevatedButton(
                 onPressed: () async {
+                  bool error = false;
                   setState(() {
                     failText = "";
                     isLoading = true;
@@ -105,6 +106,7 @@ class _HomePageState extends State<HomePage> {
                   try {
                     await fetchData();
                   } on Exception catch (_) {
+                    error = true;
                     print('Fetch Data failed');
                     setState(() {
                       failText = "Tour creation failed";
@@ -113,6 +115,13 @@ class _HomePageState extends State<HomePage> {
                   setState(() {
                     isLoading = false;
                   });
+                  if(!error) {
+                    Navigator.of(context).push(
+                      MaterialPageRoute(
+                        builder: (context) => RoutePage(tourData: tourData,),
+                      ),
+                    );
+                  }
                 },
                 child: Text("Generate Tour")),
             const SizedBox(height: 20,),
@@ -125,17 +134,17 @@ class _HomePageState extends State<HomePage> {
           ],
         ),
       ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: () {
-          Navigator.of(context).push(
-            MaterialPageRoute(
-              builder: (context) => RoutePage(tourData: tourData,),
-            ),
-          );
-        },
-        tooltip: 'Increment',
-        child: const Icon(Icons.add),
-      ),
+      // floatingActionButton: FloatingActionButton(
+      //   onPressed: () {
+      //     Navigator.of(context).push(
+      //       MaterialPageRoute(
+      //         builder: (context) => RoutePage(tourData: tourData,),
+      //       ),
+      //     );
+      //   },
+      //   tooltip: 'Increment',
+      //   child: const Icon(Icons.add),
+      // ),
     );
   }
 }

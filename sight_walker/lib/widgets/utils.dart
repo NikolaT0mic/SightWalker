@@ -42,3 +42,7 @@ String toTimeString(chillTime) {
   }
   return timeString;
 }
+
+String parsePreference(String preference) {
+  return preference.toLowerCase().replaceAll(" ", "_");
+}

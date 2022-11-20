@@ -1,9 +1,18 @@
 import 'package:http/http.dart' as http;
 import 'dart:convert';
+import 'package:shared_preferences/shared_preferences.dart';
+import '../widgets/utils.dart';
+
 
 class TourService{
 
   Future<List> requestTour(var city, var start, int duration) async {
+    //get preferences
+    SharedPreferences prefs = await SharedPreferences.getInstance();
+    List<String> preferredSights = prefs.getStringList('preferences')
+        ?? ['museum', 'park', 'amusement_park', 'art_gallery', 'church', 'zoo', 'university'];
+    preferredSights = preferredSights.map((preference) => parsePreference(preference)).toList();
+
     var url = "https://2cc7-2a09-80c0-192-0-d3a8-8f12-9ddf-3f34.eu.ngrok.io/tour";
     var headers = {
       'Content-Type': 'application/json',
@@ -17,10 +26,7 @@ class TourService{
       "start_name": start["description"],
       "start_lng": start["lng"],
       "start_lat": start["lat"],
-      "prioritized_sight_types": [
-        "museum",
-        "park"
-      ],
+      "prioritized_sight_types": preferredSights,
       "max_time": duration,
       "language": "en"
     });
